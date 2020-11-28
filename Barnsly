@@ -1,0 +1,29 @@
+import random
+import matplotlib.pyplot as plt
+
+abscisses = [0.05]
+ordonnees = [0.0]
+for i in range(30001):
+        p = random.uniform(0,1)
+        if p< 0.02:
+            abscisses.append(0.05)
+            ordonnees.append(0.27*ordonnees[i])
+        elif 0.02<= p<0.17:
+            abscisses.append(0.139*abscisses[i]+0.263*ordonnees[i]+4.57)
+            ordonnees.append(0.246*abscisses[i]+0.224*ordonnees[i]-0.036)
+        elif 0.17 <= p< 0.3:
+            abscisses.append(0.17*abscisses[i]-0.215*ordonnees[i]+0.408)
+            ordonnees.append(0.222*abscisses[i] + 0.176*ordonnees[i] +0.0893)
+        else:
+            abscisses.append(0.781*abscisses[i]+0.034*ordonnees[i]+0.1075)
+            ordonnees.append(-0.032*abscisses[i]+0.739*ordonnees[i]+0.27)
+            
+
+
+fig =plt.gcf()
+ax = plt.gca()
+ax.set_xticks([])
+ax.set_yticks ([])
+
+plt.plot(abscisses, ordonnees, 'r.')
+plt.show()
