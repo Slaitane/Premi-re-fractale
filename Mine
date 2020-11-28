@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Nov 27 10:31:33 2020
-
-@author: oussa
-"""
 import random
 import matplotlib.pyplot as plt
 
@@ -12,23 +6,23 @@ ordonnees = [0]
 for i in range(30001):
         p = random.uniform(0,1)
         if p< 0.1:
-            abscisses.append(0.05*i)
-            ordonnees.append(0.6*i)
+            abscisses.append(0.05*abscisses[i])
+            ordonnees.append(0.6*ordonnees[i])
         elif 0.1<= p<0.2:
-            abscisses.append(0.05*i)
-            ordonnees.append(1-0.5*i)
+            abscisses.append(0.05*abscisses[i])
+            ordonnees.append(1-0.5*ordonnees[i])
         elif 0.2 <= p< 0.4:
-            abscisses.append(0.46*i-0.32*i)
-            ordonnees.append(0.39*i + 0.38*i +0.6)
+            abscisses.append(0.46*abscisses[i]-0.32*ordonnees[i])
+            ordonnees.append(0.39*abscisses[i] + 0.38*ordonnees[i] +0.6)
         elif 0.4 <= p < 0.6:
-            abscisses.append(0.47*i - 0.15*i)
-            ordonnees.append( 0.17*i+ 0.42*i +1.1)
+            abscisses.append(0.47*abscisses[i] - 0.15*ordonnees[i])
+            ordonnees.append( 0.17*abscisses[i]+ 0.42*ordonnees[i] +1.1)
         elif 0.6<= p<0.8:
-            abscisses.append(0.43*i+0.28*i)
-            ordonnees.append(-0.25*i+0.45*i+1)
+            abscisses.append(0.43*abscisses[i]+0.28*ordonnees[i])
+            ordonnees.append(-0.25*abscisses[i]+0.45*ordonnees[i]+1)
         else:
-            abscisses.append(0.42*i+0.26*i)
-            ordonnees.append(-0.35*i+0.31*i+0.7)
+            abscisses.append(0.42*abscisses[i]+0.26*ordonnees[i])
+            ordonnees.append(-0.35*abscisses[i]+0.31*ordonnees[i]+0.7)
             
 
 
