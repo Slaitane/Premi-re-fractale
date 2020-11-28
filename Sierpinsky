@@ -1,0 +1,36 @@
+import random
+import matplotlib.pyplot as plt
+
+abscisses = [random.random()]
+ordonnees = [random.random()]
+
+X1 = random.random()
+Y1 = random.random()
+X2 = random.random()
+Y2 = random.random()
+X3 = random.random()
+Y3 = random.random()
+for i in range(15000):
+        p = random.uniform(0,1)
+        if p< (1/3):
+            abscisses.append((abscisses[i]+X1)/2)
+            ordonnees.append((ordonnees[i]+Y1)/2)
+        elif (1/3)<= p<(2/3):
+            abscisses.append((abscisses[i]+X2)/2)
+            ordonnees.append((ordonnees[i]+Y2)/2)
+        else:
+            abscisses.append((abscisses[i]+X3)/2)
+            ordonnees.append((ordonnees[i]+Y3)/2)
+            
+
+
+fig =plt.gcf()
+ax = plt.gca()
+ax.set_xticks([])
+ax.set_yticks ([])
+
+plt.plot(X1,Y1,'r.')
+plt.plot(X2,Y2,'r.')
+plt.plot(X3,Y3,'r.')
+plt.plot(abscisses, ordonnees, 'r.')
+plt.show()
